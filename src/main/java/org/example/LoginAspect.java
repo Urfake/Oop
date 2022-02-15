@@ -27,11 +27,7 @@ public class LoginAspect {
         if (methodSignature.getName().equals("validate")) {
             Object[] arg = joinPoint.getArgs();
             for (Object obj : arg) {
-                if (obj instanceof Auditing) {
-                    Auditing auditing = (Auditing) obj;
-                    System.out.println("Information about of book: name of book -" + auditing.getBank() + ", author of book- " + auditing.getAddress() + ", year of publication of book- " + auditing.getYear());
-                }
-                else if (obj instanceof String)
+                if (obj instanceof String)
                     System.out.println("Bank add by -" +
                             obj);
             }
