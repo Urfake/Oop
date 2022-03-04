@@ -26,10 +26,10 @@ public class LoginAspect {
         System.out.println("methodSignature.getName(): " + methodSignature.getName());
         if (methodSignature.getName().equals("validate")) {
             Object[] arg = joinPoint.getArgs();
+            int i = 1;
             for (Object obj : arg) {
                 if (obj instanceof String)
-                    System.out.println("Bank add by -" +
-                            obj);
+                    System.out.println(i + "-й" + obj);
             }
         }
         System.out.println("beforeAddLoggingAdvice: логгирование попытки получить книгу/журнал");
